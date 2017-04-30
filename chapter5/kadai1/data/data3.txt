@@ -1,0 +1,11 @@
+10
+find GTCTTTTCGGC
+find ATATG
+insert TGAA
+insert ATATCGCTC
+find CGGA
+insert GTGTA
+find T
+insert GCAGAAGAAT
+find GTGTA
+insert TTATCCGTCC
