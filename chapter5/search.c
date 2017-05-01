@@ -21,7 +21,7 @@ int binary_search(const int* a, const int length, const int key){
   int left = 0;
   int right = length - 1;
   int mid;
-  while(right > left){
+  while(right >= left){
     mid = (left + right) / 2;
     if(a[mid] == key) return 1;
     if(key > a[mid]){
