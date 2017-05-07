@@ -17,7 +17,7 @@ void enqueue(P x){
 
 P dequeue(){
     P x = Q[head];
-    head = (head + 1) % LEN
+    head = (head + 1) % LEN;
     return x;
 }
 
@@ -40,7 +40,7 @@ int main(){
         c = min(q, u.t);
         u.t -= c;
         elaps += c;
-        if (u.t > 0) enqueue();
+        if (u.t > 0) enqueue(u);
         else {
             printf("%s %d\n", u.name, elaps);
         }
