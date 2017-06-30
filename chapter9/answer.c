@@ -104,11 +104,11 @@ void print(const node *tree) {
   printf("\n");
 }
 
-node* findNode(const node *tree, const int key) {
+const node* findNode(const node *tree, const int key) {
   if(tree == NIL) {
     return NIL;
   } else if(tree->key == key) {
-    return (node*)tree;
+    return tree;
   } else if(tree->key > key) {
     return findNode(tree->left, key);
   } else {
@@ -134,7 +134,7 @@ node* minNode(node *tree) {
 }
 
 void delete(node **tree, const int key) {
-  node *hit = findNode(*tree, key);
+  node *hit = (node*)findNode(*tree, key);
   if(hit == NIL) return;
   if(hit->left == NIL || hit->right == NIL) {
     node *next = hit->left == NIL ? hit->right : hit->left;
@@ -147,8 +147,7 @@ void delete(node **tree, const int key) {
     freeNode(hit);
   } else {
     node *minSub = minNode(hit->right);
-    updateParent(minSub, NIL);
     hit->key = minSub->key;
-    freeNode(minSub);
+    delete(&minSub, minSub->key);
   }
 }

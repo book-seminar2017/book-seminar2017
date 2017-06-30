@@ -14,7 +14,7 @@ exec_command="./a.out"
 # compile=""
 # exec_command="python $code"
 
-test_sets="A1 B1 C1 C2"
+test_sets="A1 B1 C1 C2 ex"
 
 temp=$(mktemp aojtest.XXXXXX)
 trap "rm $temp" EXIT
