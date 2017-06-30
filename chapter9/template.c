@@ -17,7 +17,6 @@ node nilNode = {0, NULL, NULL, NULL};
 #define NIL (&nilNode)
 
 node* createNode(node *parent, const int key);
-int isRoot(node *n);
 void freeNode(node *n);
 void freeTree(node *t);
 
