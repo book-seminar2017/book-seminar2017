@@ -2,7 +2,7 @@
 
 code=$1
 
-set -u
+set -eu
 
 [ "$code" == "" ] && code="template.c"
 
